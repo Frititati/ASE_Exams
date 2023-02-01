@@ -412,8 +412,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\ase_extra_2.c</PathWithFileName>
-      <FilenameWithoutPath>ase_extra_2.c</FilenameWithoutPath>
+      <PathWithFileName>.\sample.c</PathWithFileName>
+      <FilenameWithoutPath>sample.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

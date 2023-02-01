@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'ase_extra_2' 
+ * Project: 'sample' 
  * Target:  'Target 1' 
  */
 
