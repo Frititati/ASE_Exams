@@ -116,8 +116,8 @@ uint32_t init_timer ( uint8_t timer_num, uint32_t TimerInterval )
 	if ( timer_num == 3 )
   {
 		LPC_TIM3->MR0 = TimerInterval;
-		LPC_TIM3->MCR = 3;				/* Interrupt and Reset on MR1 */
-
+		//LPC_TIM3->MCR = 3;				/* Interrupt and Reset on MR1 */
+		LPC_TIM3->MCR = 2; // special to not interrupt
 		NVIC_EnableIRQ(TIMER3_IRQn);
 		return (1);
   }
