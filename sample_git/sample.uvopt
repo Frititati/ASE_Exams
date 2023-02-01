@@ -85,7 +85,7 @@
         <Book>
           <Number>1</Number>
           <Title>User Manual</Title>
-          <Path>C:\Users\paolo\Documents\My Courses\BUONARROTI_Trento\materiale_corso\ase_extra_2\DATASHTS\PHILIPS\LPC17xx_UM.pdf</Path>
+          <Path>C:\Users\paolo\Documents\My Courses\BUONARROTI_Trento\materiale_corso\sample\DATASHTS\PHILIPS\LPC17xx_UM.pdf</Path>
         </Book>
         <Book>
           <Number>2</Number>
@@ -266,8 +266,8 @@
       <TopLine>9</TopLine>
       <CurrentLine>32</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\ase_extra_2.c</PathWithFileName>
-      <FilenameWithoutPath>ase_extra_2.c</FilenameWithoutPath>
+      <PathWithFileName>.\sample.c</PathWithFileName>
+      <FilenameWithoutPath>sample.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
