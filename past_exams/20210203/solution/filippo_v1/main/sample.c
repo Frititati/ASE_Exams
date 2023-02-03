@@ -19,7 +19,7 @@ int main(void)
 	joystick_init();
 	LED_init();
 
-	init_RIT(0x004C4B40);										/* RIT inizialization to 50 ms = 0x004C4B40*/
+	init_RIT(0x002625A0);										/* RIT inizialization to 50 ms = 0x004C4B40*/
 	
 	enable_timer(3);
 	enable_RIT();

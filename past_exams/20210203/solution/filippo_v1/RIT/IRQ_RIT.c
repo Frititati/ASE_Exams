@@ -5,29 +5,39 @@
 #include "../main/functions.h"
 
 extern uint16_t VAR1;
+extern uint8_t J_up;
 
 void RIT_IRQHandler (void)
 {
-	static int J_up = 0;
 	static int J_left = 0;
 	static int J_select = 0;
 	static int down_INT0 = 0;
+	static int down_KEY2 = 0;
 	
-	// joystick UP
-	if((LPC_GPIO1->FIOPIN & (1<<29)) == 0) {
-		J_up++;
-		switch(J_up){
-			case 2: // change to 10
-				j_up_press();
-				J_up = 0;
+	
+	// KEY2
+	if((LPC_GPIO2->FIOPIN & (1<<12)) == 0) {
+		down_KEY2++;
+		switch(down_KEY2) {
+			case 1:
+				key2_press();
 				break;
 			default:
 				break;
 		}
+	} else{
+			down_KEY2=0;
 	}
-	else{
-			J_up=0;
+	
+	
+	// joystick UP
+	if((LPC_GPIO1->FIOPIN & (1<<29)) == 0) {
+		J_up = 1;
+	} else{
+		J_up=0;
 	}
+	
+	
 	
 	// joystick LEFT
 	if((LPC_GPIO1->FIOPIN & (1<<27)) == 0) {

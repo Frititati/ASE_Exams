@@ -20,3 +20,10 @@ void TIMER2_IRQHandler (void)
   LPC_TIM2->IR = 1;			/* clear interrupt flag */
   return;
 }
+
+void TIMER3_IRQHandler (void)
+{
+	timer3_tick();
+  LPC_TIM3->IR = 1;			/* clear interrupt flag */
+  return;
+}

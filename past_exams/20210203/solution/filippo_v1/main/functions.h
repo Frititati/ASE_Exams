@@ -6,11 +6,16 @@
 #include "../timer/timer.h"
 
 void reset(void);
+void key2_press(void);
+void timer3_tick(void);
+void change_to_monitor(void);
 void j_up_press(void);
-void j_left_press(void);
-void j_select_press(void);
-void update_led_value(void);
-void int0_press(void);
+
+typedef enum stateType {
+    StateMonitor = 0,
+    StateAcquisizione = 1
+} STATETYPE;
+
 
 
 #endif
