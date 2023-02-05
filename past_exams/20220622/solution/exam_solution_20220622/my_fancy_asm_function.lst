@@ -1,0 +1,50 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000                 AREA             |.my_fancy_text|, CODE, READONL
+Y
+    3 00000000         
+    4 00000000         media_pressioni_con_filtro
+                               PROC
+    5 00000000                 EXPORT           media_pressioni_con_filtro   [W
+EAK]
+    6 00000000         
+    7 00000000 4770            bx               lr
+    8 00000002                 ENDP
+    9 00000002         
+   10 00000002                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\my_fancy_asm_function.d -o.\my_fancy_asm_function.o -I.\RTE\_Tar
+get_1 -ID:\programmi\Arm\ARM\CMSIS\5.9.0\CMSIS\Core\Include -ID:\programmi\Arm\
+Keil\LPC1700_DFP\2.7.1\Device\Include --predefine="__EVAL SETA 1" --predefine="
+__UVISION_VERSION SETA 537" --predefine="_RTE_ SETA 1" --predefine="LPC175x_6x 
+SETA 1" --predefine="_RTE_ SETA 1" --list=.\my_fancy_asm_function.lst my_fancy_
+asm_function.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.my_fancy_text 00000000
+
+Symbol: .my_fancy_text
+   Definitions
+      At line 2 in file my_fancy_asm_function.s
+   Uses
+      None
+Comment: .my_fancy_text unused
+media_pressioni_con_filtro 00000000
+
+Symbol: media_pressioni_con_filtro
+   Definitions
+      At line 4 in file my_fancy_asm_function.s
+   Uses
+      At line 5 in file my_fancy_asm_function.s
+Comment: media_pressioni_con_filtro used once
+2 symbols
+336 symbols in table
