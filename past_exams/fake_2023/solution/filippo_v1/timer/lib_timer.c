@@ -7,22 +7,21 @@ void enable_timer( uint8_t timer_num )
 {
   if ( timer_num == 0 )
   {
-		LPC_TIM0->TCR = 1;
+	LPC_TIM0->TCR = 1;
   }
-
-  if ( timer_num == 1)
+  else if( timer_num == 1)
   {
-		LPC_TIM1->TCR = 1;
+	LPC_TIM1->TCR = 1;
   }
-
-	if ( timer_num == 2)
+	else if( timer_num == 2)
   {
-		LPC_TIM2->TCR = 1;
+	LPC_SC->PCONP |= (1<<22);
+	LPC_TIM2->TCR = 1;
   }
-
-	if ( timer_num == 3)
+	else if( timer_num == 3)
   {
-		LPC_TIM3->TCR = 1;
+	LPC_SC->PCONP |= (1<<23);
+	LPC_TIM3->TCR = 1;
   }
   return;
 }
