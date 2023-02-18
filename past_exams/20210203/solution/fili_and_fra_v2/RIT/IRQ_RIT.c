@@ -20,7 +20,16 @@ extern uint8_t stateKEY1;
 extern uint8_t stateKEY2;
 
 extern unsigned int funzione1(unsigned int VETT[], unsigned int qualcosa, unsigned int altroboh);
-
+int avg;
+/******************************************************************************
+** Function name:		RIT_IRQHandler
+**
+** Descriptions:		REPETITIVE INTERRUPT TIMER handler
+**
+** parameters:			None
+** Returned value:		None
+**
+******************************************************************************/
 
 void RIT_IRQHandler (void)
 {		
@@ -49,6 +58,8 @@ void RIT_IRQHandler (void)
 			reset_RIT();
 			switch(pressedKEY2){
 				case 1:
+					
+					key2_pressed();
 						
 					//COSA FARE PREMUTO 50 MS
 				
@@ -61,7 +72,7 @@ void RIT_IRQHandler (void)
 		else {	/* button released */
 			pressedKEY2=0;
 			
-	    	//COSA FARE AL RILASCIO?
+	    //COSA FARE AL RILASCIO?
 			
 			reset_RIT();
 			NVIC_EnableIRQ(EINT2_IRQn);							 /* disable Button interrupts			*/
@@ -211,9 +222,9 @@ void RIT_IRQHandler (void)
 		up++;
 		switch(up){
 			case 1:
-				
 				//COSA FARE UP
-			
+				joystick_up_pressed();
+				
 				break;
 			default:
 				break;
@@ -223,6 +234,7 @@ void RIT_IRQHandler (void)
 	{
 			//COSA FARE RILASCIO
 			up=0;
+			joystick_up_released();
 	}
 	
 	ADC_start_conversion();
