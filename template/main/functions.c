@@ -48,6 +48,10 @@ void timer3_tick() {
 	
 }
 
+void joy_up_pressed() {
+	
+}
+
 
 void call_ASM_function(void) {
 	

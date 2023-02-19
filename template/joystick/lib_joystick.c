@@ -12,13 +12,13 @@
 #include "joystick.h"
 
 /*----------------------------------------------------------------------------
-  Function that initializes joysticks and switch them off
+	Function that initializes joysticks and switch them off
  *----------------------------------------------------------------------------*/
 
 void joystick_init(void) {
 
 	//SELECT
-  LPC_PINCON->PINSEL3 &= ~(3<<18);	//PIN mode GPIO (00b value per P1.25)
+	LPC_PINCON->PINSEL3 &= ~(3<<18);	//PIN mode GPIO (00b value per P1.25)
 	LPC_GPIO1->FIODIR   &= ~(1<<25);	//P1.25 Input (joysticks on PORT1 defined as Input)
 	
 	//RIGHT
@@ -34,6 +34,6 @@ void joystick_init(void) {
 	LPC_GPIO1->FIODIR &= ~(1<<27);
 	
 	//DOWN
-  LPC_PINCON->PINSEL3 &= ~(3<<20);
+	LPC_PINCON->PINSEL3 &= ~(3<<20);
 	LPC_GPIO1->FIODIR &= ~(1<<26);
 }

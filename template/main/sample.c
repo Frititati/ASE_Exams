@@ -21,10 +21,10 @@ extern uint8_t ScaleFlag; // <- ScaleFlag needs to visible in order for the emul
 #endif
 
 int main (void) {
-  	
+	
 	SystemInit();  												/* System Initialization (i.e., PLL)  */
-  LED_init();                           /* LED Initialization                 */
-  BUTTON_init();												/* BUTTON Initialization              */
+	LED_init();                           /* LED Initialization                 */
+	BUTTON_init();												/* BUTTON Initialization              */
 	joystick_init();
 	// ADC_init();
 	
@@ -47,8 +47,8 @@ int main (void) {
 	LPC_SC->PCON |= 0x1;									/* power-down	mode										*/
 	LPC_SC->PCON &= ~(0x2);						
 		
-  while (1) {                           /* Loop forever                       */	
+	while (1) {                           /* Loop forever                       */	
 		__ASM("wfi");
-  }
+	}
 
 }

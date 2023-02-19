@@ -14,6 +14,8 @@ void int0_pressed(void);
 void key1_pressed(void);
 void key2_pressed(void);
 
+void joy_up_pressed(void);
+
 void call_ASM_function(void);
 
 

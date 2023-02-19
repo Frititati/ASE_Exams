@@ -3,7 +3,7 @@
 #include "RIT.h"
 #include "../led/led.h"
 #include "../timer/timer.h"
-#include "../adc/adc.h"
+// #include "../adc/adc.h"
 #include "../main/functions.h"
 #define N 5
 
@@ -20,7 +20,7 @@ void RIT_IRQHandler (void)
 	
 	//GESTIONE BUTTON CON INTERRUPT E DEBOUNCING. RICHIAMATO AD OGNI HANDLER DEI VARI BUTTON
 	//I vari case sono dei multipli del RIT timer. (ex per quanti multipli di RIT ho premuto il pulsante)
-	
+
 	
 	//Ricordarsi di resettare i timer ove serve da INTERRUPT di BOTTONE
 	if((LPC_PINCON->PINSEL4 & (1 << 24)) == 0){
@@ -29,20 +29,20 @@ void RIT_IRQHandler (void)
 			reset_RIT();
 			switch(pressedKEY2){
 				case 1:
-						
+					
 					//COSA FARE PREMUTO 50 MS
 					key2_pressed();
-				
+					
 					break;
 				default:
-					 
+					
 					break;
 			}
 		}
 		else {	/* button released */
 			pressedKEY2=0;
 			
-	    	//COSA FARE AL RILASCIO?
+			//COSA FARE AL RILASCIO?
 			
 			reset_RIT();
 			NVIC_EnableIRQ(EINT2_IRQn);							 /* disable Button interrupts			*/
@@ -57,10 +57,10 @@ void RIT_IRQHandler (void)
 			reset_RIT(); // si può rimuovere
 			switch(pressedKEY1){
 				case 1:
-			    
-				//COSA FARE PREMUTO 50 MS?
+					
+					//COSA FARE PREMUTO 50 MS?
 					key1_pressed();
-				
+					
 					break;
 				default:
 					break;
@@ -76,7 +76,7 @@ void RIT_IRQHandler (void)
 			NVIC_EnableIRQ(EINT1_IRQn);							 /* disable Button interrupts			*/
 			LPC_PINCON->PINSEL4    |= (1 << 22);     /* External interrupt 0 pin selection */
 		}
-	}			
+	}
 	
 	
 	if((LPC_PINCON->PINSEL4 & (1 << 20)) == 0){
@@ -86,9 +86,9 @@ void RIT_IRQHandler (void)
 			switch(pressedINT0){
 				case 1:
 					
-				  //COSA FARE PREMUTO 50 MS
+					//COSA FARE PREMUTO 50 MS
 					int0_pressed();
-			    
+					
 					break;
 				default:
 					break;
@@ -103,7 +103,7 @@ void RIT_IRQHandler (void)
 			NVIC_EnableIRQ(EINT0_IRQn);							 /* disable Button interrupts			*/
 			LPC_PINCON->PINSEL4    |= (1 << 20);     /* External interrupt 0 pin selection */
 		}
-	}	
+	}
 	
 	//FINE GESTIONE BUTTON DEBOUNCING
 	//GESTIONE JOYSTICK
@@ -116,16 +116,16 @@ void RIT_IRQHandler (void)
 			case 1:
 				
 				//COSA FARE SELECT
-			
+				
 				break;
 			default:
 				break;
 		}
 	}
 	else{
-			select=0;
+		select=0;
 		
-		  //COSA FARE RILASCIO
+		//COSA FARE RILASCIO
 	}
 	
 	if((LPC_GPIO1->FIOPIN & (1<<26)) == 0){	
@@ -143,10 +143,9 @@ void RIT_IRQHandler (void)
 	}
 	else
 	{
-			down=0;
+		down=0;
 		
 		//COSA FARE RILASCIO
-		
 	}
 	
 	if((LPC_GPIO1->FIOPIN & (1<<27)) == 0){	
@@ -196,6 +195,7 @@ void RIT_IRQHandler (void)
 			case 1:
 				
 				//COSA FARE UP
+				joy_up_pressed();
 			
 				break;
 			default:
@@ -208,13 +208,14 @@ void RIT_IRQHandler (void)
 			up=0;
 	}
 	
-	ADC_start_conversion();
+	// ADC_start_conversion();
 	//Nel caso si mette una static per la gestione dell'adc e ogni quanti 50xN millisecondi aggiornare il tutto.
 	
-  LPC_RIT->RICTRL |= 0x1;	/* clear interrupt flag */
+	LPC_RIT->RICTRL |= 0x1;	/* clear interrupt flag */
 	
-  return;
+	return;
 }
+
 /*
 extern void LED_seconds(int readValue)
 {
