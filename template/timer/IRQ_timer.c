@@ -21,7 +21,7 @@ void TIMER0_IRQHandler (void)
 	// int i=0;
 	NVIC_DisableIRQ(TIMER0_IRQn);
 
-	// timer0_tick();
+	timer0_tick();
 	
 	/*if(TIMER0_state1==x) state può essere binario oppure un valore ricavato da un calcolo per tot ripetizioni a tot frequenza
 	{
@@ -43,7 +43,7 @@ void TIMER1_IRQHandler (void)
 	// int i=0;
 	NVIC_DisableIRQ(TIMER1_IRQn);
 	
-	// timer1_tick();
+	timer1_tick();
 	
 	
 	/*if(TIMER1_state1==x) state può essere binario oppure un valore ricavato da un calcolo per tot ripetizioni a tot frequenza
@@ -67,7 +67,7 @@ void TIMER2_IRQHandler (void)
 	// int i=0;
 	NVIC_DisableIRQ(TIMER2_IRQn);
 
-	// timer2_tick();
+	timer2_tick();
 	
 	/*if(TIMER2_state1==x) state può essere binario oppure un valore ricavato da un calcolo per tot ripetizioni a tot frequenza
 	{
@@ -88,7 +88,7 @@ void TIMER3_IRQHandler (void)
 	// int i=0;
 	NVIC_DisableIRQ(TIMER3_IRQn);
 
-	// timer3_tick();
+	timer3_tick();
 	
 	/*if(TIMER3_state1==x) state può essere binario oppure un valore ricavato da un calcolo per tot ripetizioni a tot frequenza
 	{

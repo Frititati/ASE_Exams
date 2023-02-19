@@ -1,12 +1,4 @@
-/*********************************************************************************************************
-**--------------File Info---------------------------------------------------------------------------------
-** File name:           IRQ_RIT.c
-** Last modified Date:  2014-09-25
-** Last Version:        V1.00
-** Descriptions:        functions to manage T0 and T1 interrupts
-** Correlated files:    RIT.h
-**--------------------------------------------------------------------------------------------------------
-*********************************************************************************************************/
+
 #include "lpc17xx.h"
 #include "RIT.h"
 #include "../led/led.h"
@@ -19,24 +11,12 @@ extern uint8_t stateINT0;
 extern uint8_t stateKEY1;
 extern uint8_t stateKEY2;
 
-extern unsigned int funzione1(unsigned int VETT[], unsigned int qualcosa, unsigned int altroboh);
-
-
 void RIT_IRQHandler (void)
-{		
-	int i=0;
+{
 	static int left, right, up, down, select;
 	static int pressedINT0=0;	
 	static int pressedKEY1=0;	
 	static int pressedKEY2=0;
-	static uint8_t position=0;
-  
-	int readValue;
-	static int secondValue;
-	static unsigned int vett[N];
-	static unsigned int currentIndex=0;
-	
-	funzione1(vett, 1, 1);
 	
 	//GESTIONE BUTTON CON INTERRUPT E DEBOUNCING. RICHIAMATO AD OGNI HANDLER DEI VARI BUTTON
 	//I vari case sono dei multipli del RIT timer. (ex per quanti multipli di RIT ho premuto il pulsante)
@@ -51,6 +31,7 @@ void RIT_IRQHandler (void)
 				case 1:
 						
 					//COSA FARE PREMUTO 50 MS
+					key2_pressed();
 				
 					break;
 				default:
@@ -78,6 +59,7 @@ void RIT_IRQHandler (void)
 				case 1:
 			    
 				//COSA FARE PREMUTO 50 MS?
+					key1_pressed();
 				
 					break;
 				default:
@@ -105,6 +87,7 @@ void RIT_IRQHandler (void)
 				case 1:
 					
 				  //COSA FARE PREMUTO 50 MS
+					int0_pressed();
 			    
 					break;
 				default:
@@ -232,7 +215,7 @@ void RIT_IRQHandler (void)
 	
   return;
 }
-
+/*
 extern void LED_seconds(int readValue)
 {
 	int i=0;
@@ -251,9 +234,4 @@ extern void LED_seconds(int readValue)
 
 	}
 }
-
-
-
-/******************************************************************************
-**                            End Of File
-******************************************************************************/
+*/

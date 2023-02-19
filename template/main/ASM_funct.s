@@ -1,7 +1,7 @@
 				AREA	my_code, CODE, READONLY
-				EXPORT funzione1
+				EXPORT test_func
 
-funzione1 	PROC 
+test_func 	PROC 
 	STMFD sp!, {R4-R8, R10-R12, lr}
 	MOV R4, #0 ;indice
 	MOV R5, #0 ;fine ciclo

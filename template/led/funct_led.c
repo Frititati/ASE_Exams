@@ -8,9 +8,8 @@
 //#include "../adc/adc.h"
 //#include "../joystick/joystick.h"
 
-//Includere anche tutte le librerie 
-
 #define LED_NUM     8                   /* Number of user LEDs                */
+
 //const unsigned long led_mask[] = { 1UL<<0, 1UL<<1, 1UL<<2, 1UL<<3, 1UL<<4, 1UL<<5, 1UL<<6, 1UL<<7};
 const unsigned long led_mask[] = { 1UL<<7, 1UL<<6, 1UL<<5, 1UL<<4, 1UL<<3, 1UL<<2, 1UL<<1, 1UL<<0};
 
@@ -49,6 +48,8 @@ void LED_Out(unsigned int value) {
   }
 	led_value = value;
 }
+
+// if needed we can split the value of i to control only part of the led in LED_OUT
 
 void LED_single_one(unsigned int value)
 {
