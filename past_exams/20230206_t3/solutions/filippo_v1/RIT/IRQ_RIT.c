@@ -135,6 +135,7 @@ void RIT_IRQHandler (void)
 			case 1:
 				
 				//COSA FARE DOWN
+				joy_down_pressed();
 			
 				break;
 			default:
@@ -195,7 +196,6 @@ void RIT_IRQHandler (void)
 			case 1:
 				
 				//COSA FARE UP
-				joy_up_pressed();
 			
 				break;
 			default:

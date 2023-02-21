@@ -12,12 +12,12 @@
 
 #define TIMER0 25000000 //1sec
 #define TIMER1 6250000 //0.25sec
-#define TIMER2 250000 //0.01sec
+#define TIMER2 0xFD51DA80 // 2 minutes 50 seconds
 #define TIMER3 25000 //0.001sec
 #define RITTIMER 0x004C4B40 
 
 #ifdef SIMULATOR
-extern uint8_t ScaleFlag; // <- ScaleFlag needs to visible in order for the emulator to find the symbol (can be placed also inside system_LPC17xx.h but since it is RO, it needs more work)
+extern uint8_t ScaleFlag;
 #endif
 
 int main (void) {
@@ -36,7 +36,7 @@ int main (void) {
 	init_timer(2, TIMER2);
 	init_timer(3, TIMER3);
 	//enable_timer(1);
-	//enable_timer(2);
+	enable_timer(2);
 	//enable_timer(3);
 	//enable_timer(0);
 	

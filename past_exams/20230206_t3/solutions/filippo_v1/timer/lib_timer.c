@@ -99,7 +99,7 @@ uint32_t init_timer ( uint8_t timer_num, uint32_t TimerInterval )
 	{
 		LPC_SC->PCONP |= (1<<22); //Attivo Timer2
 		LPC_TIM2->MR0 = TimerInterval;
-		LPC_TIM2->MCR = 3;
+		LPC_TIM2->MCR = 2;
 		NVIC_EnableIRQ(TIMER2_IRQn);
 		NVIC_SetPriority(TIMER2_IRQn, 0);	/* less priority than buttons and timer0*/
 		return (1);

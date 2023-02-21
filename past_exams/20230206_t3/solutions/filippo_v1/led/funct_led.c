@@ -10,8 +10,8 @@
 
 #define LED_NUM     8                   /* Number of user LEDs                */
 
-//const unsigned long led_mask[] = { 1UL<<0, 1UL<<1, 1UL<<2, 1UL<<3, 1UL<<4, 1UL<<5, 1UL<<6, 1UL<<7};
-const unsigned long led_mask[] = { 1UL<<7, 1UL<<6, 1UL<<5, 1UL<<4, 1UL<<3, 1UL<<2, 1UL<<1, 1UL<<0};
+const unsigned long led_mask[] = { 1UL<<0, 1UL<<1, 1UL<<2, 1UL<<3, 1UL<<4, 1UL<<5, 1UL<<6, 1UL<<7};
+//const unsigned long led_mask[] = { 1UL<<7, 1UL<<6, 1UL<<5, 1UL<<4, 1UL<<3, 1UL<<2, 1UL<<1, 1UL<<0};
 
 extern unsigned char led_value;
 
